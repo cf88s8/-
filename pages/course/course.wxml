@@ -1,0 +1,8 @@
+<!-- <image class="img" src="/images/my/course.png"></image> -->
+
+         <!-- <canvas id="myCanvas" width="400" height="400" ></canvas> -->
+
+          <!-- <canvas canvas-id="miCanvas" class='s'></canvas> -->
+<view class="container">
+          <canvas canvas-id="miCanvas"  class='s'  style='width:400px; height:400px'  ></canvas>
+</view>
