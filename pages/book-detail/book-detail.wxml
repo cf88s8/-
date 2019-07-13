@@ -1,0 +1,115 @@
+<!--pages/book-detail/book-detail.wxml-->
+<wxs src="../../util/filter.wxs" module="util" />
+<view class="container">
+  <view class="head">
+    <image class='' src='{{book.image}}'></image>
+    <text class='title'>{{book.title}}</text>
+    <text class='author'>{{book.author}}</text>
+  </view>
+
+
+  <view class='sub-container'>
+    <text class='headline'>短评</text>
+    <text class='shadow' wx:if="{{comments==false}}">还没有短评</text>
+    <view class='comment-container'>
+      <block wx:for="{{util.limit(comments,8)}}" wx:for-item="item" wx:key="content">
+        <!-- <v-tag 名称="{{值}}"/> 名称对应components 中properties 要接收的名称  值为服务器传递来的值，当名称为String属性时只接守已展开的值，
+    名称为Object时 可不在调用处展开 在对应WXML中来展开 -->
+        <v-tag text="{{item.content}}">
+          <text slot="after" class='num'>{{'+'+item.nums}}</text>
+        </v-tag>
+      </block>
+      <!--
+        <block wx:for="{{util.limit(comments,8)}}" wx:for-item="item" wx:key="content">
+              若要使用EXternalClass方法需去JS   本页面.WXSS 最下方文件中讲注释一并取消，并将nth-child（） WXS注释要取消 注释代码已测试
+        <v-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}">
+          <text slot="after" class='num'>{{'+'+item.nums}}</text>
+        </v-tag>
+      </block>
+       -->
+    </view>
+  </view>
+  <view class='sub-container'>
+    <text class='headline'>内容简介</text>
+    <text class='content' decode="true">{{util.format(book.summary)}}</text>
+  </view>
+  <view class='sub-container'>
+    <text class='headline'>书本信息</text>
+    <view class='detail-container'>
+      <view class='vertical description'>
+        <text>出版社</text>
+        <text>出版年</text>
+        <text>页数</text>
+        <text>定价</text>
+        <text>装帧</text>
+      </view>
+      <view class='vertical'>
+        <text>{{book.publisher}}</text>
+        <text>{{book.pubdate}}</text>
+        <text>{{book.pages}}</text>
+        <text>{{book.price}}</text>
+        <text>{{book.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='post-container' wx:if="{{!posting}}">
+  <view bind:tap="onFakePost" class='post-fake'>
+    <text>输入短评</text>
+  </view>
+  <view class='like-container'>
+    <v-like class="like" bind:myevent="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+    <v-button class='share-bth' open-type='share'>
+    <image class='share' slot="img" src="/images/icon/share.png"></image>
+    </v-button>
+  </view>
+</view>
+
+
+<view wx:if="{{posting}}" class='posting-container'>
+  <view class='post-header'>
+    <text wx:if="{{util.nums(comments)}}">仅可点击标签+1</text>
+    <!-- <text class='shadow' wx:if="{{comments}}">还没有短评</text> -->
+    <text wx:else >暂无短评</text>
+    <text bind:tap="onCancel" class='cancel' wx:if="{{posting}}">取消</text>
+  </view>
+  <view  class='comment-container'>
+   <block wx:for="{{util.limit(comments,3)}}" wx:for-item="item" wx:key="content">
+      <!-- <v-tag 名称="{{值}}"/> 名称对应components 中properties 要接收的名称  值为服务器传递来的值，当名称为String属性时只接守已展开的值，
+    名称为Object时 可不在调用处展开 在对应WXML中来展开   -->
+        <v-tag bind:onPost="onPosting" text="{{item.content}}">
+          <text slot="after" class='num'>{{'+'+item.nums}}</text>
+        </v-tag>
+      </block>
+    
+   
+   <!--   <block wx:for="{{util.limit(comments,3)}}" wx:for-item="item" wx:key="content">
+      若要使用EXternalClass方法需去JS  本页面.WXSS 最下方文件中讲注释一并取消，并将nth-child（）注释  WXS注释要取消  代码已经测试  
+      <v-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}">
+        <text slot="after" class='num'>{{'+'+item.nums}}</text>
+      </v-tag>
+    </block>
+    -->
+  </view>
+  <input bindconfirm='onPosting' class='post' placeholder="短评最多12个字">
+  </input>
+
+</view>
+
+<v-mask wx:if="{{posting}}"/>
+
+<!-- <wxs module="tool">
+  var highlight=function(index){
+    if(index==0){
+      return 'ex-tag1'
+    }
+    if(index==1){
+      return 'ex-tag2'
+    }
+      return ''
+  }
+module.exports={
+  highlight:highlight
+}
+</wxs> -->
