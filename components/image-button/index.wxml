@@ -1,0 +1,9 @@
+<!--components/image-button/index.wxml-->
+<button bind:getuserinfo="onGetUserInfo" open-type="{{openType}}" plain="{{true}}" class='container'>
+<!-- plain   按钮是否镂空，背景色透明 -->
+<!-- openType button组件接收一个外部传来的openType变量 -->
+
+<slot name="img"> </slot>
+<!-- <slot name="name"> </slot> -->
+
+</button>

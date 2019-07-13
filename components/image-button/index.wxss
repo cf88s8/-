@@ -1,0 +1,7 @@
+/* components/image-button/index.wxss */
+.container{
+  padding: 0 !important;
+  /* 内填充  上 0 右 0 下 0 左 0 */
+  border:none !important;
+  /* 边框   无   加权  */
+}
