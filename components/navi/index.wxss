@@ -1,0 +1,24 @@
+/* components/navi/index.wxss */
+.container{
+  width: 600rpx;
+  /* 宽度 600rpx */
+  height: 80rpx;
+  /* 高度 80rpx */
+  background-color: #f7f7f7;
+  /* 背景颜色 */
+  border-radius: 2px;
+  /* 四角的弧度 */
+  display: inline-flex;
+  /* 布局方式 行内 弹性布局 */
+  flex-direction: row;
+  /* 横向布局      从左-----到→右 */
+  justify-content: space-between;
+  align-items: center
+}
+.icon{
+  height: 80rpx;
+  width: 80rpx;
+}
+.title{
+  font-size: 28rpx;
+}
