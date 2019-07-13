@@ -1,0 +1,46 @@
+<!--pages/my/my.wxml-->
+<!-- <open-data class="icon" type="userAvatarUrl" class="avatar avatar-position"></open-data>  只加载不调用 -->
+<view class='container'>
+  <image src='../../images/my/my@bg.png' class='bg'></image>
+  <!-- avatar-position  放的为位置跟上一层有关系。 若只有只一层 放在自身，  若有多层 放在父级-->
+    <!-- <button class='button-style avatar-position' open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain='true'>
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    </button> -->
+
+    <!-- 属性open-type 传递之后写法为openType（驼峰写法转换）-->
+  
+    <v-button wx:if="{{!authorized}}" open-type='getUserInfo' class='avatar-position' bind:getuserinfo="onGetUserInfo" >
+    <image slot="img" class='avatar' src="{{avatarUrl}}"></image>
+    <!-- <text slot="name" class="name">{{nickName}}</text> -->
+    </v-button>
+    
+    <view wx:if="{{authorized}}" class='avatar-container avatar-position'>
+     <image src='{{avatarUrl}}' class='avatar'></image>
+      <text>{{nickName}}</text>
+    </view>
+  
+
+  
+<view class='about-container'>
+  <view bind:tap="aboutWe" class='about-us'>
+    <image src="../../images/my/about.png"></image>
+    <text class="description">关于我们</text>
+  </view>
+  <view class='about-us'>
+    <text class='book-num'>{{bookCount}}</text>
+    <text class='description'>喜欢的书</text>
+  </view>
+</view>
+
+  <view class='like-container'>
+    <image class='headline' src='../../images/my/like.png'></image>
+    <view class='preview-container'>
+      <block wx:for="{{classics}}" wx:key="item.id"> 
+        <v-preview bind:tap="onPreviewTap" class="preview" classic="{{item}}"/> 
+      </block>
+    </view>
+  
+  </view>
+
+</view>
+<image bind:tap="onStudy" class='study' src='/images/my/study.png'></image>
