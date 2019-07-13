@@ -1,0 +1,71 @@
+/* components/classic/music/index.wxss */
+.container{
+  display: flex;
+  /* 弹性布局 */
+  flex-direction:column;
+  /* 向下 纵向布局 */
+  align-items:center;
+  /*  元素位于容器的中心 */
+  /* 弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。 */
+}
+.classic-img{
+  width: 422rpx;
+  /* 图片宽度 */
+  height:422rpx;
+  /* 图片高度 */
+  margin-top: 60rpx;
+  /* 外上边距 */
+  border-radius:50%;
+  /* 四角边框弧度 */
+}
+.player-img{
+  width: 120rpx;
+  /* 宽度 */
+  height: 120rpx;
+ /* 高度 */
+  position:relative;
+  /* 相对向上一级  定位 */
+  bottom:270rpx;
+  /* 距离上一级的底部  */
+}
+.tag{
+  width:44rpx;
+  /* 宽度 */
+  height: 128rpx;
+  /* 高度 */
+  position:relative;
+  /* 相对向上一级  定位  */
+  bottom:160rpx;
+  /* 相对 上一级 距离底部 */
+  right: 310rpx;
+  /* 相对 上一级 距离最右部分 */
+}
+.content{
+  font-size: 36rpx;
+  /* 字体大小 */
+  max-width: 580rpx;
+  /* 最大宽度 */
+}
+.rotation{
+  -webkit-transform: rotate(360deg);
+  /* 兼容谷歌  变换方式   旋转角度  deg  */
+  animation:rotation 12s linear infinite;
+  /* 动画   动画名   时间  匀速  重复 */
+  -moz-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+
+}
+
+@-webkit-keyframes rotation{
+  /* 动画函数 */
+  /* from  开始   */
+  from{
+    /* 变换方式  旋转角度 deg */
+    -webkit-transform: rotate(0deg)
+  }
+  to{
+     /* 变换方式  旋转角度 deg */
+    -webkit-transform: rotate(360deg)
+  }
+}
