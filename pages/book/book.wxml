@@ -1,0 +1,21 @@
+  <view wx:if="{{!searching}}" class='container'>
+  <view class='header'>
+    <view bind:tap="onSearch" class='box'>
+      <image src="../../images/icon/search.png"></image>
+      <text>搜索书籍</text>
+    </view>
+  </view>
+
+  <view class='sub-container'>
+    <image class='head-img' src="../../images/book/quality.png"></image>
+    <view class='books-container'>
+    <block wx:key="id" wx:for="{{books}}" wx:for-item="item">
+    <!-- <v-tag 名称="{{值}}"/> 名称对应components 中properties 要接收的名称  值为服务器传递来的值，当名称为String属性时只接守已展开的值，
+    名称为Object时 可不在调用处展开 在对应WXML中来展开 -->
+      <v-book book="{{item}}" like="{{like}}" />
+    </block>
+    </view>
+  </view>
+</view>
+
+<v-search more="{{more}}" bind:onCanceling="onCancel" wx:if="{{searching}}" />

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "v-book":"../../components/book/index",
+    "v-search": "../../components/search/index"
+  },
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "书籍展示",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  
+}
