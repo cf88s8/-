@@ -1,0 +1,86 @@
+/* components/book/index.wxss */
+
+.container {
+  margin-top: 30rpx; /* 上边距10*/
+  display: flex;    /* 弹性布局*/
+  position: relative; /* */
+  box-shadow: 2px 2px 3px #e3e3e3;/* box-shadow: 必需的。水平阴影的位置。允许负值 (必需的。垂直阴影的位置。允许负值) (可选。模糊距离) 	可选。阴影的大小 color inset;*/
+  flex-direction: column;   /*纵项布局*/
+  width: 240rpx;      /* 宽度 */
+  height: 360rpx;   /* 高度*/
+}
+
+.img {
+  width: 100%; 
+  /* 图片宽度 */
+  height: 100%;
+  /* 图片高度 */
+  border-radius: 2px;
+  /* 图片边角  弧度 */
+}
+
+.description {
+  width: 216rpx;
+  /* 宽度 */
+  position: absolute;
+  /* 绝对定位 */
+  bottom: 0;
+  /* 距离底部 0 */
+  background-color: #fff;
+  /* 背景颜色 */
+  padding: 5rpx 10rpx 8rpx 15rpx;
+  /* 内填充 上5 右10 下8 左15 */
+  font-size: 24rpx;
+  /* 字体大小 24 */
+  display: flex;
+  /* 弹性布局 */
+  flex-direction: column;
+  /* 向下 纵向布局 */
+  border-bottom-right-radius: 2rpx;
+  /* 下右边角 弧度 */
+  border-bottom-left-radius: 2rpx;
+  /* 下左边角 弧度 */
+}
+
+.title {
+  margin-top: 10rpx;
+  /* 外上边框 10 */
+  text-overflow: ellipsis;
+  /* 文本溢出时  显示省略符号来代表被修剪的文本。*/
+  white-space: nowrap;
+  /* 规定段落中的文本 不换行 */
+  overflow: hidden;
+  /* 超出屏幕部分  隐藏  不显示 */
+}
+
+.author {
+  font-size: 20rpx;
+  /* 字体大小  20 */
+  color: #999;
+  /* 字体颜色   */
+  margin-bottom: 10rpx;
+  /* 外下边框 10 */
+  text-overflow: ellipsis;
+  /* 文本溢出时   显示省略号来表示被修剪的文本 */
+  white-space: nowrap;
+  /* 段落 不换行 */
+  overflow: hidden;
+  /* 文本溢出屏幕时   不显示 */
+}
+
+.foot {
+  font-size: 20rpx;
+  /* 字体大小 20 */
+  display: flex;
+  /* 弹性布局 */
+  flex-direction: row;
+  /* 向右 横向布局 */
+  justify-content: flex-end;   /* 项目位于容器的结尾 or底部。 */
+
+
+}
+
+.footer {
+  color: #666;
+  /* 字体颜色 */
+}
