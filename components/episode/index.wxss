@@ -1,0 +1,58 @@
+/* components/episode/index.wxss */
+.container{
+  height: 60rpx;
+  /* 高度 */
+  display:  inline-flex;
+  /* 行内弹性布局 */
+  flex-direction: row;
+  /* 横向布局 */
+}
+.index-container{
+  display: flex;
+  /* 弹性布局 */
+  flex-direction: row;
+  /* 横行布局 */
+  align-items: baseline;
+  /* 元素对齐方式  基线对齐 */
+}
+.plain{
+  font-size: 32rpx;
+  /* 字体大小 */
+}
+.index{
+  font-size: 60rpx;
+  /* 字体大小 */
+  line-height: 60rpx;
+  /* 行高  */
+  font-weight: 800;
+  /* 字体粗细 */
+  margin-right: 14rpx;
+  /* 外右边距 */
+}
+.line{
+  height: 44rpx;
+  /* 高度 */
+  margin-right: 14rpx;
+  /* 外右边距 */
+  /* margin-bottom: 2rpx; */
+  border-left: 1px solid black;
+  /* 左边框  宽度  直线  黑色 */
+}
+.date-container{
+  display: flex;
+  /* 弹性布局 */
+  flex-direction: column;
+  /* 纵向布局 */
+  margin-top: 5rpx;
+  /* 外上边距 */
+}
+.month{
+  font-size: 24rpx;
+  /* 字体大小 */
+  line-height: 24rpx;
+  /* 行高   当行高与 字体大小相同时  居中 */
+} 
+.year{
+    font-size: 20rpx;
+    /* 字体大小 */
+}
