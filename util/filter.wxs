@@ -1,0 +1,32 @@
+var format = function(text) {
+  if (!text) {
+    return
+  } else {
+    var reg = getRegExp('\\\\n', 'g')
+    return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;')
+
+  }
+}
+
+
+var limit = function(array, length) {
+  return array.slice(0, length)
+}
+
+var nums = function(comments) {
+  if (comments.length != 0) {
+    // console.log('第一次' + comments.length)
+    return  true
+  }
+ else {
+    // console.log('false')
+    return false
+  }
+}
+
+module.exports = {
+  format: format,
+  limit: limit,
+  nums: nums
+
+}
