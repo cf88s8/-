@@ -1,0 +1,33 @@
+.classic-container{
+  display: flex;
+  /* 弹性 布局 */
+  flex-direction: column;
+  /* 纵向布局 */
+  align-items: center;
+  /* 元素位于项目内中间 */
+  /* 弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。 */
+}
+.classic-img{
+  width: 750rpx;
+  /* 图片宽度 */
+  height: 500rpx;
+  /* 图片高度 */
+}
+.tag{
+  width: 46rpx;
+  /* 宽度 */
+  height: 142rpx;
+  /* 高度 */
+  position: relative;
+  /* 相对上一级 进行定位 */
+  right: 310rpx;
+  /* 相对上一级 距离最右边 */
+  bottom: 58rpx;
+  /* 相对上一级   距离最底部 */
+}
+.content{
+  font-size: 36rpx;
+  /* 字体大小 */
+  max-width: 580rpx;
+  /* 最大宽度 */
+}
