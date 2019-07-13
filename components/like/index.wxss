@@ -1,0 +1,29 @@
+/* components/like/index.wxss */
+.container{
+  display: inline-flex;
+  /* 行内弹性布局 */
+  flex-direction: row;
+  /* 横行布局 */
+  padding: 10rpx;
+  /* 内填充 上 10 右10 下10 左10 */
+}
+.container image{
+  width: 32rpx;
+  /* 图片宽度 */
+  height: 28rpx;
+  /* 图片高度 */
+}
+.container text{
+  font-size: 24rpx;
+  /* 字体大小 */
+  line-height: 24rpx;
+  /* 行高  当与字体大小 相同时  居中显示 */
+  font-family: "PingFangSC-Thin";
+  /* 字体样式    平方字体 */
+  position: relative;
+  /* 相对 上一级 进行定位 */
+  bottom: 10rpx;
+  /* 相对 上一级 距离底部 */
+  left: 6rpx;
+  /* 相对  上一级 距离最左边 */
+}
