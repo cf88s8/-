@@ -1,0 +1,59 @@
+/* components/loading/index.wxss */
+.spinner{
+  width: 40rpx;
+  /* 宽度 */
+  height: 40rpx;
+  /* 高度 */
+  position:relative;
+  /* 相对 上一级 进行定位 */
+}
+.double-bounce1,
+.double-bounce2{
+  width: 100%;
+  /* 宽度  充满屏幕 */
+  height: 100%;
+  /* 高度  充满屏幕 */
+  border-radius:50%;
+  /* 四角边框 弧度  圆弧 */
+  background-color:#3063b2;
+  /* 背景颜色 */
+  opacity:0.6;
+  /* 透明度 */
+  position:absolute;
+  /* 绝对定位 */
+  top: 0;
+  /* 距离上部 */
+  left:0;
+  /* 距离左部 */
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  /* 兼容  动画   动画名 时间  重复  动画以低速开始和结束。 */
+  animation: bounce 2.0s infinite ease-in-out;
+} 
+.double-bounce2{
+  
+  -webkit-animation-delay: -1.0s;
+  /* 兼容  动画 启动延时  */
+  animation-delay: -1.0s;
+}
+
+@keyframes bounce{
+  0%{
+    /* 兼容 变换方式   放大缩小   */
+    -webkit-transform:scale(0.0);
+  }
+  50%{
+    -webkit-transform:scale(1.0);
+  }
+}
+
+@keyframes bounce{
+  0%,100%{
+    /* 兼容 变换方式   放大缩小 */
+    transform:scale(0.0);
+    -webkit-transform:scale(0.0);
+  }
+  50%{
+    transform:scale(1.0);
+    -webkit-transform:scale(1.0);
+  }
+}
